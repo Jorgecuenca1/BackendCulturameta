@@ -4,11 +4,11 @@ from .models import Employed, Sede
 class EmployedSerializer(serializers.ModelSerializer):
     class Meta:
         model = Employed
-        fields = ['all']
+        fields = ['name','contact','carge','extension','phone','fax','email',]
 
 class SedeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sede
-        fields = ['all']
+        fields = ['name','type','adress','city','phone','fax','email',]
 
 

@@ -4,24 +4,24 @@ from .models import Artista, Obra, Area, Biblioteca, Festival
 class ArtistaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Artista
-        fields = ['all']
+        fields = ['name','last_name','age','cedula','lugar_nacimiento']
 
 class ObraSerializer(serializers.ModelSerializer):
     class Meta:
         model = Obra
-        fields = ['all']
+        fields = ['name','name_obra','artista','ubicacion','description','image',]
 
 class AreaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Area
-        fields = ['all']
+        fields = ['name','description','icono',]
 
 class BibliotecaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Biblioteca
-        fields = ['all']
+        fields = ['name','libro','description','orden']
 
 class FestivalSerializer(serializers.ModelSerializer):
     class Meta:
         model = Festival
-        fields = ['all']
+        fields = ['name','description','orden','fecha']

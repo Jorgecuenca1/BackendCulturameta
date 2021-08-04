@@ -4,19 +4,20 @@ from .models import Image, Module, SubModule, Document
 class ImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Image
-        fields = ['all']
+        fields = ['name','imagen',]
 
 class ModuleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Module
-        fields = ['all']
+        fields = ['name',]
+
 class SubModuleSerializer(serializers.ModelSerializer):
     class Meta:
         model = SubModule
-        fields = ['all']
+        fields = ['name','module',]
 
 class DocumentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Document
-        fields = ['all']
+        fields = ['name','name_archive','age','month','description','orden','module','submodule','url',]
 
