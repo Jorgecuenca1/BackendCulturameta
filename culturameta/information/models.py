@@ -173,7 +173,7 @@ class Objectives(models.Model):
 
 class MiVi(models.Model):
     mision = models.CharField(
-        null=True, blank=True,
+        null=True, blank=True, max_length=20,
         verbose_name="Mision",
         help_text="Mision",
     )
@@ -183,7 +183,7 @@ class MiVi(models.Model):
         help_text="Descripción mision",
     )
     vision = models.CharField(
-        null=True, blank=True,
+        null=True, blank=True, max_length=20,
         verbose_name="Vision",
         help_text="Vision",
     )
