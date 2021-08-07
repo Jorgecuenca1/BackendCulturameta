@@ -152,8 +152,8 @@ class Information(models.Model):
     )
     hydrography = models.TextField(
         null=True, blank=True,
-        verbose_name="Hidrografía",
-        help_text="Hidrografía",
+        verbose_name="Información",
+        help_text="Información",
     )
 
     def __str__(self):

@@ -24,7 +24,13 @@ class SubModuleViewSet(viewsets.ModelViewSet):
 class DocumentViewSet(viewsets.ModelViewSet):
     serializer_class = DocumentSerializer
     def get_queryset(self):
-        return Document.objects.all()
+        if self.request.method == 'GET':
+            queryset = Document.objects.all()
+            age = self.request.GET.get('year', None)
+            if age is not None:
+                queryset = queryset.filter(age=age)
+            return queryset
+
 
 class AccountabilityViewSet(viewsets.ModelViewSet):
     serializer_class = AccountabilitySerializer
