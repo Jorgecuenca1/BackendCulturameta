@@ -1,8 +1,10 @@
 
 from django.shortcuts import render
 from rest_framework import viewsets
-from .models import Image, Module, SubModule, Document
-from .serializers import ImageSerializer, ModuleSerializer, SubModuleSerializer, DocumentSerializer
+from .models import Image, Module, SubModule, Document, Accountability
+from .serializers import ImageSerializer, ModuleSerializer, SubModuleSerializer, DocumentSerializer, \
+    AccountabilitySerializer
+
 
 class ImageViewSet(viewsets.ModelViewSet):
     serializer_class = ImageSerializer
@@ -23,3 +25,8 @@ class DocumentViewSet(viewsets.ModelViewSet):
     serializer_class = DocumentSerializer
     def get_queryset(self):
         return Document.objects.all()
+
+class AccountabilityViewSet(viewsets.ModelViewSet):
+    serializer_class = AccountabilitySerializer
+    def get_queryset(self):
+        return Accountability.objects.all()

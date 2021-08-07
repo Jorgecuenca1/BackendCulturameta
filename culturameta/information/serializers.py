@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Employed, Sede
+from .models import Employed, Sede, Information, Objectives, MiVi, Coro, Functions
+
 
 class EmployedSerializer(serializers.ModelSerializer):
     class Meta:
@@ -11,4 +12,27 @@ class SedeSerializer(serializers.ModelSerializer):
         model = Sede
         fields = ['name','type','adress','city','phone','fax','email',]
 
+class InformationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Information
+        fields = ['meta','loft','generalities','location','limits','aspects','economy', 'territory','height','temperature','regions','hydrography']
 
+class ObjectivesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Objectives
+        fields = ['objetive']
+
+class MiViSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MiVi
+        fields = ['mision','descriptionmision','vision','descriptionvision',]
+
+class FunctionsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Functions
+        fields = ['function']
+
+class CoroSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Coro
+        fields = ['coro']

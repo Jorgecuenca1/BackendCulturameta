@@ -93,3 +93,128 @@ class Sede(models.Model):
 
     def __str__(self):
         return self.name
+
+class Information(models.Model):
+    meta = models.TextField(
+        null=True, blank=True,
+        verbose_name="Meta",
+        help_text="Meta",
+    )
+    loft = models.TextField(
+        null=True, blank=True,
+        verbose_name="Altillanura",
+        help_text="Altillanura",
+    )
+    generalities = models.TextField(
+        null=True, blank=True,
+        verbose_name="Generalidades",
+        help_text="Generalidades",
+    )
+    location = models.TextField(
+        null=True, blank=True,
+        verbose_name="Localizacion",
+        help_text="Localizacion",
+    )
+    limits = models.TextField(
+        null=True, blank=True,
+        verbose_name="limites",
+        help_text="limites",
+    )
+    aspects = models.TextField(
+        null=True, blank=True,
+        verbose_name="Aspectos",
+        help_text="Aspectos",
+    )
+    economy = models.TextField(
+        null=True, blank=True,
+        verbose_name="Economia",
+        help_text="Economia",
+    )
+    territory = models.TextField(
+        null=True, blank=True,
+        verbose_name="Territorio",
+        help_text="Territorio",
+    )
+    height = models.TextField(
+        null=True, blank=True,
+        verbose_name="Altura",
+        help_text="Altura",
+    )
+    temperature = models.TextField(
+        null=True, blank=True,
+        verbose_name="Temperatura",
+        help_text="Temperatura",
+    )
+    regions = models.TextField(
+        null=True, blank=True,
+        verbose_name="Regiones",
+        help_text="Regiones",
+    )
+    hydrography = models.TextField(
+        null=True, blank=True,
+        verbose_name="Hidrografía",
+        help_text="Hidrografía",
+    )
+
+    def __str__(self):
+        return self.meta
+
+class Objectives(models.Model):
+    objetive = models.TextField(
+        null=True, blank=True,
+        verbose_name="Objetivo",
+        help_text="Objetivo",
+    )
+
+
+    def __str__(self):
+        return self.objetive
+
+
+class MiVi(models.Model):
+    mision = models.CharField(
+        null=True, blank=True,
+        verbose_name="Mision",
+        help_text="Mision",
+    )
+    descriptionmision = models.TextField(
+        null=True, blank=True,
+        verbose_name="Descripción mision",
+        help_text="Descripción mision",
+    )
+    vision = models.CharField(
+        null=True, blank=True,
+        verbose_name="Vision",
+        help_text="Vision",
+    )
+    descriptionvision = models.TextField(
+        null=True, blank=True,
+        verbose_name="Descripción Vision",
+        help_text="Descripción Vision",
+    )
+
+
+    def __str__(self):
+        return self.mision
+
+class Functions(models.Model):
+    function = models.TextField(
+        null=True, blank=True,
+        verbose_name="Función",
+        help_text="Función",
+    )
+
+
+    def __str__(self):
+        return self.function
+
+class Coro(models.Model):
+    coro = models.TextField(
+        null=True, blank=True,
+        verbose_name="Coro",
+        help_text="Coro",
+    )
+
+
+    def __str__(self):
+        return self.coro

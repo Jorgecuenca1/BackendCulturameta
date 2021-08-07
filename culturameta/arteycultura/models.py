@@ -4,12 +4,12 @@ from django.utils import timezone
 from datetime import *
 class Artista(models.Model):
     name = models.CharField(
-        null=True, blank=True, max_length=20,
+        null=True, blank=True, max_length=200,
         verbose_name="Nombre",
         help_text="Nombre del Artista",
     )
     last_name = models.CharField(
-        null=True, blank=True, max_length=20,
+        null=True, blank=True, max_length=200,
         verbose_name="Apellidos",
         help_text="Apellidos del Artista",
     )
@@ -24,7 +24,7 @@ class Artista(models.Model):
         help_text="Cedula",
     )
     lugar_nacimiento = models.CharField(
-        null=True, blank=True, max_length=20,
+        null=True, blank=True, max_length=200,
         verbose_name="Lugar de nacimiento",
         help_text="Lugar de nacimiento",
     )
@@ -41,7 +41,7 @@ class Artista(models.Model):
 
 class Obra(models.Model):
     name = models.CharField(
-        null=True, blank=True, max_length=50,
+        null=True, blank=True, max_length=200,
         verbose_name="Nombre ",
         help_text="Nombre ",
     )
@@ -56,7 +56,7 @@ class Obra(models.Model):
         help_text="Nombre del artista",
     )
     ubicacion = models.CharField(
-        null=True, blank=True, max_length=50,
+        null=True, blank=True, max_length=200,
         verbose_name="Nombre de archivo",
         help_text="Nombre de archivo",
     )
@@ -66,7 +66,7 @@ class Obra(models.Model):
         help_text="Descripcion",
     )
     image = models.ImageField(
-        null=True, blank=True, max_length=50,
+        null=True, blank=True, max_length=200,
         verbose_name="Imagen ",
         help_text="Imagen ",
     )
@@ -82,20 +82,47 @@ class Obra(models.Model):
 
 class Area(models.Model):
     name = models.CharField(
-        null=True, blank=True, max_length=50,
+        null=True, blank=True, max_length=200,
         verbose_name="Nombre ",
         help_text="Nombre ",
     )
+    information = models.TextField(
+        null=True, blank=True,
+        verbose_name="Informacion",
+        help_text="Informacion",
+    )
+    tittle1 = models.CharField(
+        null=True, blank=True, max_length=200,
+        verbose_name="Titulo  ",
+        help_text="Titulo ",
+    )
 
-    description = models.TextField(
+
+    description1 = models.TextField(
+        null=True, blank=True,
+        verbose_name="Descripcion",
+        help_text="Descripcion",
+    )
+    tittle2 = models.CharField(
+        null=True, blank=True, max_length=200,
+        verbose_name="Titulo  ",
+        help_text="Titulo ",
+    )
+
+    description2 = models.TextField(
         null=True, blank=True,
         verbose_name="Descripcion",
         help_text="Descripcion",
     )
     icono= models.ImageField(
-        null=True, blank=True, max_length=50,
+        null=True, blank=True, max_length=200,
         verbose_name="Icono ",
         help_text="Icono",
+    )
+    history = models.TextField(
+        null=True, blank=True,
+        verbose_name="Historia",
+        help_text="Historia",
     )
 
 
@@ -110,19 +137,44 @@ class Area(models.Model):
 
 class Biblioteca(models.Model):
     name = models.CharField(
-        null=True, blank=True, max_length=50,
+        null=True, blank=True, max_length=200,
         verbose_name="Nombre ",
         help_text="Nombre ",
     )
     libro = models.CharField(
-        null=True, blank=True, max_length=50,
+        null=True, blank=True, max_length=200,
         verbose_name="Libro",
         help_text="Libro",
+    )
+    librarian = models.CharField(
+        null=True, blank=True, max_length=200,
+        verbose_name="Bibliotecario",
+        help_text="Bibliotecario",
+    )
+    adress = models.CharField(
+        null=True, blank=True, max_length=200,
+        verbose_name="Dirección",
+        help_text="Dirección",
+    )
+    zone = models.CharField(
+        null=True, blank=True, max_length=200,
+        verbose_name="ZOna",
+        help_text="ZOna",
+    )
+    resolution = models.CharField(
+        null=True, blank=True, max_length=200,
+        verbose_name="Resolucion",
+        help_text="Resolucion",
     )
     description = models.TextField(
         null=True, blank=True,
         verbose_name="Descripcion",
         help_text="Descripcion",
+    )
+    history = models.TextField(
+        null=True, blank=True,
+        verbose_name="Historia",
+        help_text="Historia",
     )
     orden = models.PositiveBigIntegerField(
         null=True, blank=True,
@@ -155,7 +207,6 @@ class Festival(models.Model):
         verbose_name="Orden",
         help_text="Orden",
     )
-    fecha = models.DateField(null=True, blank = True)
 
     class Meta:
         ordering = ["id"]

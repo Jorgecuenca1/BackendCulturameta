@@ -19,7 +19,7 @@ class ObraAdmin(ImportExportModelAdmin):
     list_filter = ('name',)
 
 class AreaAdmin(ImportExportModelAdmin):
-    list_display = ('id', 'name', 'description')
+    list_display = ('id', 'name','information', 'tittle1', 'description1',)
     search_fields = ('id', 'name', 'description')
     list_filter = ('name',)
 
@@ -29,8 +29,8 @@ class BibliotecaAdmin(ImportExportModelAdmin):
     list_filter = ('id',)
 
 class FestivalAdmin(ImportExportModelAdmin):
-    list_display = ('id', 'name', 'descripcion','orden','fecha')
-    search_fields = ('id', 'name', 'descripcion','orden','fecha')
+    list_display = ('id', 'name', 'descripcion','orden')
+    search_fields = ('id', 'name', 'descripcion','orden')
     list_filter = ('id',)
 
 class NoticiaAdmin(ImportExportModelAdmin):

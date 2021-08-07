@@ -270,3 +270,30 @@ class Presupuesto(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Accountability(models.Model):
+    accountability = models.CharField(
+        null=True, blank=True, max_length=100,
+        verbose_name="Rendición de cuentas ",
+        help_text="Rendición de cuentas ",
+    )
+    url = models.CharField(
+        null=True, blank=True, max_length=50,
+        verbose_name="Url",
+        help_text="Url",
+    )
+
+    file = models.FileField(
+        verbose_name='URL Document',
+        upload_to=' document/rendicion',
+        blank=True, null=True
+    )
+
+    class Meta:
+        ordering = ["id"]
+        verbose_name = "Rendicion de cuentas",
+        verbose_name_plural = "Rendicion de cuentas"
+
+    def __str__(self):
+        return self.accountability

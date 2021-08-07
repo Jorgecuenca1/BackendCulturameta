@@ -14,12 +14,12 @@ class ObraSerializer(serializers.ModelSerializer):
 class AreaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Area
-        fields = ['name','description','icono',]
+        fields = ['name','information', 'tittle1', 'description1', 'tittle2', 'description2','icono','history']
 
 class BibliotecaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Biblioteca
-        fields = ['name','libro','description','orden']
+        fields = ['name','libro', 'librarian', 'adress', 'zone', 'resolution', 'description', 'history', 'orden']
 
 class FestivalSerializer(serializers.ModelSerializer):
     class Meta:

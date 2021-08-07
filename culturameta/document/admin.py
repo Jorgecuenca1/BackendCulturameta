@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from import_export.admin import ImportExportModelAdmin
 
-from .models import Image, Menu, Module, SubModule, Document
+from .models import Image, Menu, Module, SubModule, Document, Accountability
 
 
 # Register your models here.
@@ -33,6 +33,10 @@ class DocumentAdmin(ImportExportModelAdmin):
     search_fields = ('id', 'name', 'name_archive','description','orden','module','submodule','url')
     list_filter = ('id',)
 
+class AccountabilityAdmin(ImportExportModelAdmin):
+    list_display = ('id', 'accountability', 'file')
+    search_fields = ('id', 'name')
+    list_filter = ('id',)
 
 
 admin.site.register(Image, ImageAdmin),
@@ -40,3 +44,4 @@ admin.site.register(Menu, MenuAdmin),
 admin.site.register(Module, ModuleAdmin),
 admin.site.register(SubModule, SubModuleAdmin),
 admin.site.register(Document, DocumentAdmin),
+admin.site.register(Accountability, AccountabilityAdmin),
