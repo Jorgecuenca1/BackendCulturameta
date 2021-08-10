@@ -32,20 +32,6 @@ class DocumentViewSet(viewsets.ModelViewSet):
             if module and age and submodule is not None:
                 queryset = queryset.filter(age=age, module=module, submodule=submodule)
                 return queryset
-            if module and age is not None:
-                queryset = queryset.filter(age=age, module=module)
-                return queryset
-            if age is not None:
-                queryset = queryset.filter(age=age)
-                return queryset
-
-            if module is not None:
-                queryset = queryset.filter(module=module)
-                return queryset
-
-            if submodule is not None:
-                queryset = queryset.filter(submodule=submodule)
-                return queryset
 
 
 
