@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Artista, Obra, Area, Biblioteca, Festival
+from .models import Artista, Obra, Area, Biblioteca, Festival, Noticia
+
 
 class ArtistaSerializer(serializers.ModelSerializer):
     class Meta:
@@ -25,3 +26,8 @@ class FestivalSerializer(serializers.ModelSerializer):
     class Meta:
         model = Festival
         fields = ['name','description','orden','fecha']
+
+class NoticiaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Noticia
+        fields = ['name','descripcion','orden','file']

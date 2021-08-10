@@ -218,11 +218,11 @@ class Festival(models.Model):
 
 class Noticia(models.Model):
     name = models.CharField(
-        null=True, blank=True, max_length=50,
+        null=True, blank=True, max_length=300,
         verbose_name="Nombre ",
         help_text="Nombre ",
     )
-    descripcion = models.CharField(
+    descripcion = models.TextField(
         null=True, blank=True, max_length=50,
         verbose_name="Descripción",
         help_text="Descripción",
@@ -232,6 +232,11 @@ class Noticia(models.Model):
         null=True, blank=True,
         verbose_name="Orden",
         help_text="Orden",
+    )
+    file = models.FileField(
+        verbose_name='URL Document',
+        upload_to=' noticia/imagen',
+        blank=True, null=True
     )
 
     class Meta:

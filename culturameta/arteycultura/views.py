@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .models import Artista, Obra, Area, Biblioteca, Festival
-from .serializers import ArtistaSerializer, ObraSerializer, AreaSerializer, BibliotecaSerializer, FestivalSerializer
+from .models import Artista, Obra, Area, Biblioteca, Festival, Noticia
+from .serializers import ArtistaSerializer, ObraSerializer, AreaSerializer, BibliotecaSerializer, FestivalSerializer, \
+    NoticiaSerializer
+
 
 class ArtistaViewSet(viewsets.ModelViewSet):
     serializer_class = ArtistaSerializer
@@ -32,3 +34,9 @@ class FestivalViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return Festival.objects.all()
+
+class NoticiaViewSet(viewsets.ModelViewSet):
+    serializer_class = NoticiaSerializer
+
+    def get_queryset(self):
+        return Noticia.objects.all()
