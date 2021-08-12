@@ -29,6 +29,18 @@ class DocumentViewSet(viewsets.ModelViewSet):
             age = self.request.GET.get('year', None)
             module = self.request.GET.get('module', None)
             submodule = self.request.GET.get('submodule',None)
+            if module is not None:
+                queryset = queryset.filter(module=module)
+                return queryset
+            if module and submodule is not None:
+                queryset = queryset.filter(module=module, submodule=submodule)
+                return queryset
+            if age and submodule is not None:
+                queryset = queryset.filter(age=age,submodule=submodule)
+                return queryset
+            if module and age is not None:
+                queryset = queryset.filter(age=age, module=module)
+                return queryset
             if module and age and submodule is not None:
                 queryset = queryset.filter(age=age, module=module, submodule=submodule)
                 return queryset

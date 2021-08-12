@@ -39,4 +39,9 @@ class NoticiaViewSet(viewsets.ModelViewSet):
     serializer_class = NoticiaSerializer
 
     def get_queryset(self):
-        return Noticia.objects.all()
+        if self.request.method == 'GET':
+            queryset = Noticia.objects.all()
+            orden = self.request.GET.get('orden', None)
+            if orden is not None:
+                queryset = queryset.filter(orden=orden)
+                return queryset
