@@ -22,6 +22,11 @@ docker-compose build
 docker-compose up
 ```
 
+URLS:
+* http://localhost:8000/
+* http://localhost:8000/admin
+* http://localhost:8000/swagger
+
 ### Comandos de Django
 
 En el archivo Makefile se encuentran algunos de los comandos comunes del framework, para ejecutarlos deberá escribir en la consola `make` y luego el nombre del comando:
