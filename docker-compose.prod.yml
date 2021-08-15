@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  culturameta:
+    build: ./culturameta
+    command: [ "newrelic-admin", "run-program", "uwsgi", "--ini", "uwsgi.ini" ]
+    env_file: .env
+    volumes:
+      - ./culturameta:/src
+    environment:
+      - DJANGO_SETTINGS_MODULE=culturameta.settings.production
+      - NEW_RELIC_CONFIG_FILE=/src/newrelic.ini
+    ports:
+      # TODO: Definir el puerto
+      - '8000:8000'
+    extra_hosts:
+      # TODO: Agregar extra host para la db
+      - "postgres:172.22.66.180"
