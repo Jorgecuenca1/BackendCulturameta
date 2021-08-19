@@ -19,6 +19,8 @@ from tutorials.urls import router
 from arteycultura.urls import routera
 from document.urls import routerd
 from information.urls import routeri
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^admin/dynamic_raw_id/', include('dynamic_raw_id.urls')),
@@ -28,4 +30,4 @@ urlpatterns = [
     path('api/', include((routerd.urls, 'document'), namespace='document')),
     path('api/', include((routeri.urls, 'information'), namespace='information')),
 
-]
+]+ static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
