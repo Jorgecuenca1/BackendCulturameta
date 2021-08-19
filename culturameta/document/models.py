@@ -286,7 +286,7 @@ class Accountability(models.Model):
 
     file = models.FileField(
         verbose_name='URL Document',
-        upload_to=' document/rendicion',
+        upload_to=' document/rendicion',size= 2621440,
         blank=True, null=True
     )
 
