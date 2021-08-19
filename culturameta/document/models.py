@@ -42,6 +42,7 @@ class Menu(models.Model):
         return self.name
 
 
+
 class Module(models.Model):
     name = models.CharField(
         null=False, blank=False, max_length=50,
@@ -135,7 +136,7 @@ class Document(models.Model):
         help_text="SubModulo",
         blank=True, null=True
     )
-    url = ContentTypeRestrictedFileField(
+    url = models.FileField(
         verbose_name='URL Document',
         upload_to= documents_path,
         blank=True, null=True
