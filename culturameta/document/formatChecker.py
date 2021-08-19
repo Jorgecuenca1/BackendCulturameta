@@ -1,7 +1,7 @@
-from Django.db.models import FileField
-from Django.forms import forms
-from Django.template.defaultfilters import filesizeformat
-from Django.utils.translation import ugettext_lazy as _
+from django.db.models import FileField
+from django.forms import forms
+from django.template.defaultfilters import filesizeformat
+from django.utils.translation import ugettext_lazy as _
 
 class ContentTypeRestrictedFileField(FileField):
     """

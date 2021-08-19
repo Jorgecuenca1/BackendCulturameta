@@ -3,7 +3,6 @@ import uuid
 
 from django.db import models
 from .formatChecker import ContentTypeRestrictedFileField
-
 # Create your models here.
 
 class Image(models.Model):
@@ -138,7 +137,7 @@ class Document(models.Model):
     )
     url = ContentTypeRestrictedFileField(
         verbose_name='URL Document',
-        upload_to= documents_path, content_types=['video/x-msvideo', 'application/pdf', 'video/mp4', 'audio/mpeg', ],max_upload_size=2621440,
+        upload_to= documents_path, content_types=['video/x-msvideo', 'application/pdf', 'video/mp4', 'audio/mpeg', ],max_upload_size=5242880,
         blank=True, null=True
     )
 
