@@ -2,7 +2,7 @@ import os
 import uuid
 
 from django.db import models
-from formatChecker import ContentTypeRestrictedFileField
+from .formatChecker import ContentTypeRestrictedFileField
 
 # Create your models here.
 
