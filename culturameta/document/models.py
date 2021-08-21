@@ -2,7 +2,16 @@ import os
 import uuid
 
 from django.db import models
+from django.core.exceptions import ValidationError
 
+
+def validate_file_size(value):
+    filesize = value.size
+
+    if filesize > 2621440:
+        raise ValidationError("The maximum file size that can be uploaded is 10MB")
+    else:
+        return value
 # Create your models here.
 
 class Image(models.Model):
@@ -139,7 +148,7 @@ class Document(models.Model):
     url = models.FileField(
         verbose_name='URL Document',
         upload_to= documents_path,
-        blank=True, null=True
+        blank=True, null=True, validators=[validate_file_size]
     )
 
     class Meta:
