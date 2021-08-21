@@ -9,10 +9,10 @@ def validate_file_size(value):
     filesize = value.size
 
     if filesize > 2621440:
-        raise ValidationError("The maximum file size that can be uploaded is 10MB")
+        raise ValidationError("The maximum file size that can be uploaded is 2.5MB")
     else:
         return value
-# Create your models here.
+
 
 class Image(models.Model):
     name = models.CharField(
