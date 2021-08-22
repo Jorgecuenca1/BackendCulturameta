@@ -6,14 +6,10 @@ from django.core.exceptions import ValidationError
 
 from django_file_validator.validators import MaxSizeValidator
 
-def validate_file_size(value):
-    filesize = value.file.size
-
-    if filesize > 2621440:
-        raise ValidationError("The maximum file size that can be uploaded is 2.5MB")
-    else:
-        return value
-
+def file_size(value): # add this to some file where you can import it from
+    limit = 2 * 1024 * 1024
+    if value.size > limit:
+        raise ValidationError('File too large. Size should not exceed 2 MiB.')
 
 class Image(models.Model):
     name = models.CharField(
@@ -149,7 +145,7 @@ class Document(models.Model):
     url = models.FileField(
         verbose_name='URL Document',
         upload_to= documents_path,
-        blank=True, null=True, validators=[validate_file_size]
+        blank=True, null=True, validators=[file_size]
     )
 
     class Meta:
