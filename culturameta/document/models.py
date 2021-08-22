@@ -4,6 +4,7 @@ import uuid
 from django.db import models
 from django.core.exceptions import ValidationError
 
+from django_file_validator.validators import MaxSizeValidator
 
 def validate_file_size(value):
     filesize = value.size
@@ -148,7 +149,7 @@ class Document(models.Model):
     url = models.FileField(
         verbose_name='URL Document',
         upload_to= documents_path,
-        blank=True, null=True, validators=[validate_file_size]
+        blank=True, null=True, validators=[MaxSizeValidator(2621440)]
     )
 
     class Meta:

@@ -13,6 +13,7 @@ django-smart-selects==1.5.4
 django-template-debug==0.3.5
 djangorestframework==3.11.0
 psycopg2
+django-file-validator
 msgpack==0.6.2
 django-cors-headers
 odfpy==1.4.1
