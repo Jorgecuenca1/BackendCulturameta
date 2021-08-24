@@ -101,12 +101,12 @@ def documents_path(instance, filename):
 class Document(models.Model):
 
     name = models.CharField(
-        null=True, blank=True, max_length=50,
+        null=True, blank=True, max_length=200,
         verbose_name="Nombre ",
         help_text="Nombre ",
     )
     name_archive = models.CharField(
-        null=True, blank=True, max_length=50,
+        null=True, blank=True, max_length=200,
         verbose_name="Nombre de archivo",
         help_text="Nombre de archivo",
     )
