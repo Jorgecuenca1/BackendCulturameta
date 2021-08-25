@@ -4,7 +4,7 @@ from rest_framework.response import Response
 
 from .models import Menu
 from .serializers import MenuSerializer
-from ..culturameta.settings import HEADER_TOKEN
+from culturameta.settings import HEADER_TOKEN
 
 
 class MenuViewSet(viewsets.ModelViewSet):
