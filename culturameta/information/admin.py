@@ -31,7 +31,6 @@ class MiViAdmin(ImportExportModelAdmin):
 class ObjectivesAdmin(ImportExportModelAdmin):
     list_display = ('id', 'objetive', )
     search_fields = ('id', 'objetive',)
-    list_filter = ('objective',)
 
 class FunctionsAdmin(ImportExportModelAdmin):
     list_display = ('id', 'function' )
