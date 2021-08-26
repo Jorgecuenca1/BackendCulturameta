@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from import_export.admin import ImportExportModelAdmin
 
-from .models import Employed, Sede
+from .models import Employed, Sede, Information, Objectives, Functions, Coro
 
 
 # Register your models here.
@@ -43,3 +43,7 @@ class CoroAdmin(ImportExportModelAdmin):
     list_filter = ('coro',)
 admin.site.register(Employed, EmployedAdmin),
 admin.site.register(Sede, SedeAdmin),
+admin.site.register(Information,InformationAdmin),
+admin.site.register(Objectives,ObjectivesAdmin),
+admin.site.register(Functions,FunctionsAdmin),
+admin.site.register(Coro,CoroAdmin),
