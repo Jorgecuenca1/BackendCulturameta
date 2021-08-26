@@ -19,7 +19,17 @@ class EmployedViewSet(viewsets.ModelViewSet):
 
     serializer_class = EmployedSerializer
     def get_queryset(self):
-        return Employed.objects.all()
+        if self.request.method == 'GET':
+            queryset = Employed.objects.all()
+            phone = self.request.GET.get('phone', None)
+            if phone is not None:
+                queryset = queryset.filter(phone=phone)
+                return queryset
+
+
+
+
+
 
 class SedeViewSet(viewsets.ModelViewSet):
 
