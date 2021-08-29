@@ -218,12 +218,12 @@ class Festival(models.Model):
 
 class Noticia(models.Model):
     name = models.CharField(
-        null=True, blank=True, max_length=300,
+        null=True, blank=True, max_length=400,
         verbose_name="Nombre ",
         help_text="Nombre ",
     )
     descripcion = models.TextField(
-        null=True, blank=True, max_length=50,
+        null=True, blank=True,
         verbose_name="Descripción",
         help_text="Descripción",
     )
