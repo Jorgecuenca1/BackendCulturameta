@@ -19,6 +19,7 @@ from tutorials.urls import router
 from arteycultura.urls import routera
 from document.urls import routerd
 from information.urls import routeri
+from information import views as information_views
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
@@ -29,5 +30,8 @@ urlpatterns = [
     path('api/', include((routera.urls, 'arteycultura'), namespace='arteycultura')),
     path('api/', include((routerd.urls, 'document'), namespace='document')),
     path('api/', include((routeri.urls, 'information'), namespace='information')),
+    path('pqrsd/',information_views.pqrsd,name='pqrsd'),
+    path('torneo/', information_views.torneo, name='torneo'),
+    path('encuestatransparencia/', information_views.encuestatransparencia, name='pqrsd'),
 
 ]+ static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)

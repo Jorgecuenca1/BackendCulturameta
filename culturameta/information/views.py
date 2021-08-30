@@ -1,8 +1,8 @@
 
 from django.shortcuts import render
 from rest_framework import viewsets
-
-
+from django.shortcuts import render, redirect
+from .forms import TorneoForm, PqrsdForm, EncuestaTransparenciaForm
 from .models import Employed, Sede, Objectives, MiVi, Functions, Coro, Information
 from .serializers import EmployedSerializer, SedeSerializer, ObjectivesSerializer, MiViSerializer, FunctionsSerializer, \
     CoroSerializer, InformationSerializer
@@ -105,3 +105,48 @@ class CoroViewSet(viewsets.ModelViewSet):
     serializer_class = CoroSerializer
     def get_queryset(self):
         return Coro.objects.all()
+
+def torneo(request):
+    if request.method == "POST":
+        # update DB
+        form = TorneoForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.save()
+            return redirect('https://culturameta.gov.co')
+    else:
+        # show the form
+        form = TorneoForm()
+
+    context = {'form': form}
+    return render(request, 'torneo.html', context)
+
+def pqrsd(request):
+    if request.method == "POST":
+        # update DB
+        form = PqrsdForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.save()
+            return redirect('https://culturameta.gov.co')
+    else:
+        # show the form
+        form = PqrsdForm()
+
+    context = {'form': form}
+    return render(request, 'pqrsd.html', context)
+
+def encuestatransparencia(request):
+    if request.method == "POST":
+        # update DB
+        form = EncuestaTransparenciaForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.save()
+            return redirect('https://culturameta.gov.co')
+    else:
+        # show the form
+        form = EncuestaTransparenciaForm()
+
+    context = {'form': form}
+    return render(request, 'encuestatransparencia.html', context)

@@ -34,7 +34,7 @@ class FestivalAdmin(ImportExportModelAdmin):
     list_filter = ('id',)
 
 class NoticiaAdmin(ImportExportModelAdmin):
-    list_display = ('id', 'name', 'descripcion','orden')
+    list_display = ('id', 'name', 'descripcion','orden','url',)
     search_fields = ('id', 'name', 'descripcion','orden')
     list_filter = ('id',)
 
