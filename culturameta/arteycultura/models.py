@@ -224,7 +224,7 @@ class Noticia(models.Model):
     )
     url = models.CharField(
         null=True, blank=True, max_length=400,
-        verbose_name="Url ver mas",
+        verbose_name="Url ver smas",
         help_text="Url ver mas",
     )
 
