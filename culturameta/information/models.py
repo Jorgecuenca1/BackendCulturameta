@@ -323,8 +323,33 @@ class Nivel(models.Model):
         verbose_name_plural = 'Nivel'
 
 class Patrimonio(models.Model):
-    name = models.CharField(max_length=30, blank=True, verbose_name='Titulo')
-
+    name = models.CharField(max_length=120, blank=True, verbose_name='Titulo', null=True)
+    autor = models.CharField(max_length=180, blank=True, verbose_name='Autor', null=True)
+    ano = models.CharField(max_length=4, blank=True, verbose_name='Año', null=True)
+    colaboradores = models.TextField(
+        verbose_name='Colaboradores', null=True,
+        blank=True)
+    tipomaterial = models.CharField(max_length=120, blank=True, verbose_name='Tipo de material', null=True)
+    idioma = models.CharField(max_length=120, blank=True, verbose_name='Idioma', null=True)
+    edicion = models.CharField(max_length=120, blank=True, verbose_name='Edicion', null=True)
+    descripcion = models.TextField(
+        verbose_name='Descripción', null=True,
+        blank=True)
+    tipocontenido = models.TextField(
+        verbose_name='Tipo de contenido', null=True,
+        blank=True)
+    isbn = models.CharField(max_length=120, blank=True, verbose_name='ISBN', null=True)
+    temas = models.CharField(max_length=120, blank=True, verbose_name='Temas', null=True)
+    otraclasificacion = models.CharField(max_length=120, blank=True, verbose_name='Otra Clasificación', null=True)
+    breve = models.TextField(
+        verbose_name='Breve Descripción', null=True,
+        blank=True)
+    detalle = models.TextField(
+        verbose_name='Detalles de adquisición', null=True,
+        blank=True)
+    editorial = models.CharField(max_length=120, blank=True, verbose_name='Editorial', null=True)
+    ciudad = models.CharField(max_length=120, blank=True, verbose_name='Ciudad', null=True)
+    copias = models.CharField(max_length=120, blank=True, verbose_name='Copias', null=True)
 
     def __str__(self):
         return self.name
