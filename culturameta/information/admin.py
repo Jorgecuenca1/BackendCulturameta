@@ -2,7 +2,7 @@ from django.contrib import admin
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 
-from .models import Employed, Sede, Information, Objectives, Functions, Coro, Tiposolicitud, Nivel, TypeDocument, Pqrsd, EncuestaTransparencia, Modalidad, Propuesta, Torneo
+from .models import Employed, Sede, Information, Objectives, Functions, Coro, Tiposolicitud, Nivel, TypeDocument, Pqrsd, EncuestaTransparencia, Modalidad, Propuesta, Torneo, Patrimonio
 
 
 # Register your models here.
