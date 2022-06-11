@@ -350,7 +350,7 @@ class Patrimonio(models.Model):
     editorial = models.CharField(max_length=120, blank=True, verbose_name='Editorial', null=True)
     ciudad = models.CharField(max_length=120, blank=True, verbose_name='Ciudad', null=True)
     copias = models.CharField(max_length=120, blank=True, verbose_name='Copias', null=True)
-
+    created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     def __str__(self):
         return self.name
 
