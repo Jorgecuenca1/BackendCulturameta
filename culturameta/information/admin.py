@@ -10,6 +10,7 @@ class PatrimonioAdmin(ImportExportModelAdmin):
     list_display = ('id', 'name', )
     search_fields = ('id', 'name',  )
     list_filter = ('name',)
+
 class EmployedAdmin(ImportExportModelAdmin):
     list_display = ('id', 'name', 'contact','carge','extension','phone','fax','email', )
     search_fields = ('id', 'name', 'contact','carge','extension','phone','fax','email', )
@@ -140,6 +141,7 @@ class EncuestaTransparenciaResource(resources.ModelResource):
     class Meta:
         model = EncuestaTransparencia
 admin.site.register(Employed, EmployedAdmin),
+admin.site.register(Patrimonio, PatrimonioAdmin),
 admin.site.register(Sede, SedeAdmin),
 admin.site.register(Information,InformationAdmin),
 admin.site.register(Objectives,ObjectivesAdmin),
