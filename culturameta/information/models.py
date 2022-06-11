@@ -322,6 +322,17 @@ class Nivel(models.Model):
         verbose_name = 'Nivel'
         verbose_name_plural = 'Nivel'
 
+class Patrimonio(models.Model):
+    name = models.CharField(max_length=30, blank=True, verbose_name='Titulo')
+
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Catalogo de patrimonio'
+        verbose_name_plural = 'Catalogo de Patrimonio'
+
 class TypeDocument(models.Model):
     name = models.CharField(max_length=30, blank=True, verbose_name='Tipo de documento')
 

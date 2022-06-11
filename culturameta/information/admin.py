@@ -6,7 +6,10 @@ from .models import Employed, Sede, Information, Objectives, Functions, Coro, Ti
 
 
 # Register your models here.
-
+class PatrimonioAdmin(ImportExportModelAdmin):
+    list_display = ('id', 'name', )
+    search_fields = ('id', 'name',  )
+    list_filter = ('name',)
 class EmployedAdmin(ImportExportModelAdmin):
     list_display = ('id', 'name', 'contact','carge','extension','phone','fax','email', )
     search_fields = ('id', 'name', 'contact','carge','extension','phone','fax','email', )
