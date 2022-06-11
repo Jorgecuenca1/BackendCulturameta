@@ -222,11 +222,6 @@ class Noticia(models.Model):
         verbose_name="Nombre ",
         help_text="Nombre ",
     )
-    url = models.CharField(
-        null=True, blank=True, max_length=400,
-        verbose_name="Url ver smas",
-        help_text="Url ver mas",
-    )
 
     descripcion = models.TextField(
         null=True, blank=True,
