@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Employed, Sede, Information, Objectives, MiVi, Coro, Functions
+from .models import Employed, Sede, Information, Objectives, MiVi, Coro, Functions, Patrimonio
 
 
 class EmployedSerializer(serializers.ModelSerializer):
@@ -36,3 +36,9 @@ class CoroSerializer(serializers.ModelSerializer):
     class Meta:
         model = Coro
         fields = ['coro']
+
+class PatrimonioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Patrimonio
+        fields = ['name','subtituilo','autor','ano','colaboradores','tipomaterial','numeropaginas','caracteristicas','dimensiones','tiporegistro','nivelbibliografico','fuentecatalogacion','idioma','edicion','descripcion','tipocontenido',
+                  'isbn','temas','otraclasificacion','breve','detalle','editorial','ciudad','copias','url','archivo',]

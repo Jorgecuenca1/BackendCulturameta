@@ -3,8 +3,8 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from django.shortcuts import render, redirect
 from .forms import TorneoForm, PqrsdForm, EncuestaTransparenciaForm
-from .models import Employed, Sede, Objectives, MiVi, Functions, Coro, Information
-from .serializers import EmployedSerializer, SedeSerializer, ObjectivesSerializer, MiViSerializer, FunctionsSerializer, \
+from .models import Employed, Sede, Objectives, MiVi, Functions, Coro, Information, Patrimonio
+from .serializers import EmployedSerializer, PatrimonioSerializer,SedeSerializer, ObjectivesSerializer, MiViSerializer, FunctionsSerializer, \
     CoroSerializer, InformationSerializer
 from rest_framework.response import Response
 from culturameta.settings import HEADER_TOKEN
@@ -92,6 +92,21 @@ class FunctionsViewSet(viewsets.ModelViewSet):
     serializer_class = FunctionsSerializer
     def get_queryset(self):
         return Functions.objects.all()
+
+
+class PatrimonioViewSet(viewsets.ModelViewSet):
+
+    def create(self, request, *args, **kwargs):
+        request_token = request.headers.get('X-Custom-Header', None)
+        if request_token is None or request_token != HEADER_TOKEN:
+            return Response(status=400)
+        return super(PatrimonioViewSet, self).create(request, *args, **kwargs)
+
+
+    serializer_class = PatrimonioSerializer
+    def get_queryset(self):
+        return Patrimonio.objects.all()
+
 
 class CoroViewSet(viewsets.ModelViewSet):
 
