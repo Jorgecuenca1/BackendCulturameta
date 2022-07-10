@@ -1,6 +1,6 @@
 from rest_framework import routers
 from .views import EmployedViewSet, SedeViewSet, InformationViewSet, ObjectivesViewSet, MiViViewSet, FunctionsViewSet, \
-    CoroViewSet
+    CoroViewSet, PatrimonioViewSet
 
 routeri = routers.SimpleRouter()
 routeri.register(r'employed', EmployedViewSet, basename='employed'),
