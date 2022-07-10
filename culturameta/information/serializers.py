@@ -40,5 +40,4 @@ class CoroSerializer(serializers.ModelSerializer):
 class PatrimonioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Patrimonio
-        fields = ['name','subtituilo','autor','ano','colaboradores','tipomaterial','numeropaginas','caracteristicas','dimensiones','tiporegistro','nivelbibliografico','fuentecatalogacion','idioma','edicion','descripcion','tipocontenido',
-                  'isbn','temas','otraclasificacion','breve','detalle','editorial','ciudad','copias','url','archivo',]
+        fields = '__all__'
