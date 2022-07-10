@@ -332,7 +332,7 @@ class Patrimonio(models.Model):
         blank=True)
     tipomaterial = models.CharField(max_length=120, blank=True, verbose_name='Tipo de material', null=True)
     numeropaginas = models.CharField(max_length=5, blank=True, verbose_name='NUmero de paginas', null=True)
-    numeropaginas = models.TextField(blank=True, verbose_name='Otras caracteristicas', null=True)
+    caracteristicas = models.TextField(blank=True, verbose_name='Otras caracteristicas', null=True)
     dimensiones = models.CharField(max_length=5, blank=True, verbose_name='Dimensiones', null=True)
     tiporegistro = models.CharField(max_length=5, blank=True, verbose_name='Tiporegistro', null=True)
     nivelbibliografico = models.CharField(max_length=5, blank=True, verbose_name='Nivel bibliografico', null=True)
