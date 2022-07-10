@@ -324,12 +324,19 @@ class Nivel(models.Model):
 
 class Patrimonio(models.Model):
     name = models.CharField(max_length=120, blank=True, verbose_name='Titulo', null=True)
+    subtituilo = models.CharField(max_length=300, blank=True, verbose_name='Subtitulo', null=True)
     autor = models.CharField(max_length=180, blank=True, verbose_name='Autor', null=True)
-    ano = models.CharField(max_length=4, blank=True, verbose_name='Año', null=True)
+    ano = models.CharField(max_length=4, blank=True, verbose_name='fecha nacimienautor', null=True)
     colaboradores = models.TextField(
         verbose_name='Colaboradores', null=True,
         blank=True)
     tipomaterial = models.CharField(max_length=120, blank=True, verbose_name='Tipo de material', null=True)
+    numeropaginas = models.CharField(max_length=5, blank=True, verbose_name='NUmero de paginas', null=True)
+    numeropaginas = models.TextField(blank=True, verbose_name='Otras caracteristicas', null=True)
+    dimensiones = models.CharField(max_length=5, blank=True, verbose_name='Dimensiones', null=True)
+    tiporegistro = models.CharField(max_length=5, blank=True, verbose_name='Tiporegistro', null=True)
+    nivelbibliografico = models.CharField(max_length=5, blank=True, verbose_name='Nivel bibliografico', null=True)
+    fuentecatalogacion = models.CharField(max_length=5, blank=True, verbose_name='FUENTE DE CATALOGACION', null=True)
     idioma = models.CharField(max_length=120, blank=True, verbose_name='Idioma', null=True)
     edicion = models.CharField(max_length=120, blank=True, verbose_name='Edicion', null=True)
     descripcion = models.TextField(
@@ -350,7 +357,8 @@ class Patrimonio(models.Model):
     editorial = models.CharField(max_length=120, blank=True, verbose_name='Editorial', null=True)
     ciudad = models.CharField(max_length=120, blank=True, verbose_name='Ciudad', null=True)
     copias = models.CharField(max_length=120, blank=True, verbose_name='Copias', null=True)
-    url = models.CharField(max_length=500, blank=True, verbose_name='Url', null=True)
+    url = models.CharField(max_length=500, blank=True, verbose_name='Url koha', null=True)
+    archivo = models.CharField(max_length=500, blank=True, verbose_name='Url archivo', null=True)
     created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     def __str__(self):
         return self.name
